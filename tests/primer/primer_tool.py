@@ -150,7 +150,10 @@ class Primer:
         ]
         if astroid_errors:
             warnings.warn(f"Fatal errors traced to astroid:  {astroid_errors}")
-        assert not other_fatal_msgs, other_fatal_msgs
+        if other_fatal_msgs:
+            warnings.warn(f"Other fatal messages: {other_fatal_msgs}")
+        print(other_fatal_msgs)
+        assert not other_fatal_msgs
 
     def _handle_compare_command(self) -> None:
         with open(self.config.base_file, encoding="utf-8") as f:
