@@ -1060,7 +1060,7 @@ class TestRunTC:
         path = join(
             HERE, "regrtest_data", "regression_missing_init_3564", "subdirectory/"
         )
-        self._test_output([path, "-j2"], expected_output="No such file or directory")
+        self._test_output([path, "-j2"], expected_output="")
 
     def test_output_file_valid_path(self, tmpdir: LocalPath) -> None:
         path = join(HERE, "regrtest_data", "unused_variable.py")
