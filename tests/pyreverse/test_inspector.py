@@ -28,7 +28,7 @@ def project(get_project: Callable) -> Project:
 
 
 def test_class_implements(project: Project) -> None:
-    klass = project.get_module("data.clientmodule_test")["Ancestor"]
+    klass = project.get_module("tests.data.clientmodule_test")["Ancestor"]
     assert hasattr(klass, "implements")
     assert len(klass.implements) == 1
     assert isinstance(klass.implements[0], nodes.ClassDef)
@@ -36,13 +36,13 @@ def test_class_implements(project: Project) -> None:
 
 
 def test_class_implements_specialization(project: Project) -> None:
-    klass = project.get_module("data.clientmodule_test")["Specialization"]
+    klass = project.get_module("tests.data.clientmodule_test")["Specialization"]
     assert hasattr(klass, "implements")
     assert len(klass.implements) == 0
 
 
 def test_locals_assignment_resolution(project: Project) -> None:
-    klass = project.get_module("data.clientmodule_test")["Specialization"]
+    klass = project.get_module("tests.data.clientmodule_test")["Specialization"]
     assert hasattr(klass, "locals_type")
     type_dict = klass.locals_type
     assert len(type_dict) == 2
@@ -55,7 +55,7 @@ def test_locals_assignment_resolution(project: Project) -> None:
 
 
 def test_instance_attrs_resolution(project: Project) -> None:
-    klass = project.get_module("data.clientmodule_test")["Specialization"]
+    klass = project.get_module("tests.data.clientmodule_test")["Specialization"]
     assert hasattr(klass, "instance_attrs_type")
     type_dict = klass.instance_attrs_type
     assert len(type_dict) == 3
@@ -124,10 +124,10 @@ def test_from_directory(project: Project) -> None:
 
 def test_project_node(project: Project) -> None:
     expected = [
-        "data",
-        "data.clientmodule_test",
-        "data.property_pattern",
-        "data.suppliermodule_test",
+        "tests.data",
+        "tests.data.clientmodule_test",
+        "tests.data.property_pattern",
+        "tests.data.suppliermodule_test",
     ]
     assert sorted(project.keys()) == expected
 
