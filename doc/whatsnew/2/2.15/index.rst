@@ -86,6 +86,8 @@ Other Changes
 
   Closes #6953
 
+* Update ``astroid`` to 2.12.0.
+
 
 Internal changes
 ================
