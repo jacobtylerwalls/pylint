@@ -11,6 +11,9 @@
 Summary -- Release highlights
 =============================
 
+* We improved ``pylint``'s handling of namespace packages. More packages should be
+  linted without resorting to using the ``-recursive=y`` option.
+
 
 New checkers
 ============

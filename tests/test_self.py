@@ -1228,13 +1228,6 @@ class TestRunTC:
         # Error code should not include bit-value 1 for crash
         assert not ex.value.code % 2
 
-    def test_regression_recursive(self):
-        """Tests if error is raised when linter is executed over directory not using --recursive=y"""
-        self._test_output(
-            [join(HERE, "regrtest_data", "directory", "subdirectory"), "--recursive=n"],
-            expected_output="No such file or directory",
-        )
-
     def test_recursive(self):
         """Tests if running linter over directory using --recursive=y"""
         self._runtest(
@@ -1349,22 +1342,6 @@ class TestRunTC:
                         "--ignore-paths=^ignored_subdirectory/.*",
                     ],
                     code=0,
-                )
-
-    def test_regression_recursive_current_dir(self):
-        with _test_sys_path():
-            # pytest is including directory HERE/regrtest_data to sys.path which causes
-            # astroid to believe that directory is a package.
-            sys.path = [
-                path
-                for path in sys.path
-                if not os.path.basename(path) == "regrtest_data"
-            ]
-            with _test_cwd():
-                os.chdir(join(HERE, "regrtest_data", "directory"))
-                self._test_output(
-                    ["."],
-                    expected_output="No such file or directory",
                 )
 
 
