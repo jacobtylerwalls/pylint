@@ -20,6 +20,12 @@
     "directories": ["src/flask"],
     "url": "https://github.com/pallets/flask"
   },
+  "music21": {
+    "branch": "master",
+    "directories": ["music21"],
+    "pylintrc_relpath": ".pylintrc",
+    "url": "https://github.com/cuthbertLab/music21"
+  },
   "pandas": {
     "branch": "main",
     "directories": ["pandas"],
