@@ -24,7 +24,7 @@ When the ``--recursive=y`` option is used, modules and packages are also accepte
 
 This option makes ``pylint`` attempt to discover all modules (files ending with ``.py`` extension)
 and all explicit packages (all directories containing a ``__init__.py`` file).
-As of version 2.15, ``pylint`` will also import namespace packages but for some edge
+As of version 2.15, ``pylint`` will also discover namespace packages but for some edge
 cases that are still under development (where you might still find ``--recursive=y`` useful).
 
 Pylint **will not import** this package or module, but it does use Python internals
