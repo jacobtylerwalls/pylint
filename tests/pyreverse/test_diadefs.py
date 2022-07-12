@@ -105,7 +105,6 @@ class TestDefaultDiadefGenerator:
         ("specialization", "Specialization", "Ancestor"),
     ]
 
-    # https://github.com/PyCQA/pylint/issues/2763
     @pytest.mark.xfail
     def test_extract_relations(self, HANDLER: DiadefsHandler, PROJECT: Project) -> None:
         """Test extract_relations between classes."""
@@ -114,7 +113,6 @@ class TestDefaultDiadefGenerator:
         relations = _process_relations(cd.relationships)
         assert relations == self._should_rels
 
-    # https://github.com/PyCQA/pylint/issues/2763
     @pytest.mark.xfail
     def test_functional_relation_extraction(
         self, default_config: PyreverseConfig, get_project: Callable
