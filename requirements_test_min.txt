@@ -1,6 +1,6 @@
 -e .[testutils,spelling]
 # astroid dependency is also defined in pyproject.toml
-astroid @ git+https://github.com/jacobtylerwalls/astroid@incomplete-cache-key
+astroid @ git+https://github.com/jacobtylerwalls/astroid@still-recursion-error
 typing-extensions~=4.5
 py~=1.11.0
 pytest~=7.3
