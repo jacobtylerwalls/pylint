@@ -167,7 +167,7 @@ STDLIB_CLASSES_IGNORE_ANCESTOR = frozenset(
         "typing.Hashable",
         "typing.Sized",
         TYPING_NAMEDTUPLE,
-        TYPING_TYPEDDICT,
+        TYPING_TYPEDDICT,  # trivial change to rerun primer
     )
 )
 
