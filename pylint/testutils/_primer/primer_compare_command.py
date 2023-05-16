@@ -25,13 +25,9 @@ class CompareCommand(PrimerCommand):
             main_data = {}
             pr_data = {}
             for idx in range(self.config.batches):
-                TEST_CODE_ONLY = True
-                if TEST_CODE_ONLY:
-                    main_data = self._load_json(self.config.base_file)
-                else:
-                    main_data.update(
-                        self._load_json(self.config.base_file.replace("BATCHIDX", idx))
-                    )
+                main_data.update(
+                    self._load_json(self.config.base_file.replace("BATCHIDX", idx))
+                )
                 pr_data.update(
                     self._load_json(self.config.new_file.replace("BATCHIDX", idx))
                 )
