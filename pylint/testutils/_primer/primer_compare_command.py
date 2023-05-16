@@ -18,8 +18,24 @@ MAX_GITHUB_COMMENT_LENGTH = 65536
 
 class CompareCommand(PrimerCommand):
     def run(self) -> None:
-        main_data = self._load_json(self.config.base_file)
-        pr_data = self._load_json(self.config.new_file)
+        if self.config.batches is None:
+            main_data = self._load_json(self.config.base_file)
+            pr_data = self._load_json(self.config.new_file)
+        else:
+            main_data = {}
+            pr_data = {}
+            for idx in range(self.config.batches):
+                TEST_CODE_ONLY = True
+                if TEST_CODE_ONLY:
+                    main_data = self._load_json(self.config.base_file)
+                else:
+                    main_data.update(
+                        self._load_json(self.config.base_file.replace("BATCHIDX", idx))
+                    )
+                pr_data.update(
+                    self._load_json(self.config.new_file.replace("BATCHIDX", idx))
+                )
+
         missing_messages_data, new_messages_data = self._cross_reference(
             main_data, pr_data
         )
