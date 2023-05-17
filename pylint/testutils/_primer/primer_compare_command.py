@@ -26,10 +26,10 @@ class CompareCommand(PrimerCommand):
             pr_data = {}
             for idx in range(self.config.batches):
                 main_data.update(
-                    self._load_json(self.config.base_file.replace("BATCHIDX", str(idx)))
+                    self._load_json(self.config.base_file.replace("BATCHIDX", "batch" + str(idx)))
                 )
                 pr_data.update(
-                    self._load_json(self.config.new_file.replace("BATCHIDX", str(idx)))
+                    self._load_json(self.config.new_file.replace("BATCHIDX", "batch" + str(idx)))
                 )
 
         missing_messages_data, new_messages_data = self._cross_reference(
