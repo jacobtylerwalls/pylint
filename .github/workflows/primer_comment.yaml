@@ -105,7 +105,7 @@ jobs:
           --commit=${{ github.event.workflow_run.head_sha }} \
           --base-file=output_${{ steps.python.outputs.python-version }}_main_BATCHIDX.txt \
           --new-file=output_${{ steps.python.outputs.python-version }}_pr_BATCHIDX.txt \
-          --batches=5
+          --batches=4
       - name: Post comment
         id: post-comment
         uses: actions/github-script@v6.4.1
