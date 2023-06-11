@@ -893,7 +893,7 @@ class SimilarChecker(BaseRawFileChecker, Similar):
         Calls self.close() to actually calculate and report duplicate code.
         """
         Similar.combine_mapreduce_data(self, linesets_collection=data)
-        self.close()
+        # self.close()
 
 
 def register(linter: PyLinter) -> None:
