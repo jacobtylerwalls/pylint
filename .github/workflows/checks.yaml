@@ -184,3 +184,7 @@ jobs:
           . venv/bin/activate
           cd doc
           make html
+          if [[ git diff --name-only ]]
+          then echo "Unstaged files detected. Run `cd doc; make html` and commit the result."
+          exit 32
+          fi
