@@ -185,6 +185,6 @@ jobs:
           cd doc
           make html
           if [[ $(git diff --name-only) ]]
-          then echo "Unstaged files detected. Run `cd doc; make html` and commit the result."
+          then echo "Unstaged files detected. `cd doc` and `make html` and commit the result."
           exit 1
           fi
