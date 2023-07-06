@@ -1135,7 +1135,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
 
         if (
             len(node.args) != 2
-            or not all(isinstance(arg, nodes.Name) for arg in node.args)
+            or not all(isinstance(arg, nodes.Unknown) for arg in node.args)
             or node.args[1].name != "self"
             or (frame_class := node_frame_class(node)) is None
             or node.args[0].name != frame_class.name
