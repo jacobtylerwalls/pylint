@@ -152,6 +152,9 @@ jobs:
           git config --global user.email "primer@example.com"
           git config --global user.name "Pylint Primer"
           git pull origin ${{ steps.download-main-run.outputs.result }} --no-edit --no-commit --no-rebase
+          echo $?
+          git status
+          git log -n 10
 
       # Run primer
       - name: Run pylint primer

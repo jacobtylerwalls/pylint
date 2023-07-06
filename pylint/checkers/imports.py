@@ -489,7 +489,7 @@ class ImportsChecker(DeprecatedMixin, BaseChecker):
                 self.add_message("cyclic-import", args=" -> ".join(cycle))
 
     def get_map_data(self) -> defaultdict[str, set[str]]:
-        return self.import_graph
+        return (self.import_graph,)
 
     def reduce_map_data(
         self, linter: PyLinter, data: list[defaultdict[str, set[str]]]
