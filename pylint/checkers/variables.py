@@ -1304,7 +1304,7 @@ class VariablesChecker(BaseChecker):
         inferred = utils.safe_infer(node.iter)
         if not isinstance(inferred, DICT_TYPES):
             return
-
+        """irrelevant"""
         values = self._nodes_to_unpack(inferred)
         if not values:
             # no dict items returned
