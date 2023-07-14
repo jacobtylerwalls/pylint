@@ -37,7 +37,7 @@ def test_crash_during_linting(
     linter: PyLinter, capsys: CaptureFixture[str], tmp_path: Path
 ) -> None:
     with mock.patch(
-        "pylint.lint.PyLinter.check_astroid_module", side_effect=RuntimeError
+        "pylint.lint.pylinter.PyLinter.check_astroid_module", side_effect=RuntimeError
     ):
         linter.crash_file_path = str(tmp_path / "pylint-crash-%Y")
         linter.check([__file__])
