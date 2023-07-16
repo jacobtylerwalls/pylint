@@ -52,7 +52,7 @@ jobs:
         id: generate-python-key
         run: >-
           echo "key=${{ env.KEY_PREFIX }}-${{ env.CACHE_VERSION }}-${{
-            on.workflow_call.inputs.astroid_sha }}-${{
+            inputs.astroid_sha }}-${{
             hashFiles('pyproject.toml', 'requirements_test.txt',
           'requirements_test_min.txt', 'requirements_test_pre_commit.txt') }}" >>
           $GITHUB_OUTPUT
@@ -72,11 +72,11 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && on.workflow_call.inputs.astroid_sha != ''
+        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/${{ context.repo.owner }}/astroid@${{
-            on.workflow_call.inputs.astroid_sha }}
+            inputs.astroid_sha }}
       - name: Run pytest
         run: |
           . venv/bin/activate
@@ -205,7 +205,7 @@ jobs:
         id: generate-python-key
         run: >-
           echo "key=venv-${{ env.CACHE_VERSION }}-${{
-            on.workflow_call.inputs.astroid_sha }}-${{
+            inputs.astroid_sha }}-${{
             hashFiles('pyproject.toml', 'requirements_test_min.txt')
           }}" >> $env:GITHUB_OUTPUT
       - name: Restore Python virtual environment
@@ -224,11 +224,11 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && on.workflow_call.inputs.astroid_sha != ''
+        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/${{ context.repo.owner }}/astroid@${{
-            on.workflow_call.inputs.astroid_sha }}
+            inputs.astroid_sha }}
       - name: Run pytest
         run: |
           . venv\\Scripts\\activate
@@ -258,7 +258,7 @@ jobs:
         id: generate-python-key
         run: >-
           echo "key=venv-${{ env.CACHE_VERSION }}-${{
-            on.workflow_call.inputs.astroid_sha }}-${{
+            inputs.astroid_sha }}-${{
             hashFiles('pyproject.toml', 'requirements_test_min.txt')
           }}" >> $GITHUB_OUTPUT
       - name: Restore Python virtual environment
@@ -277,11 +277,11 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && on.workflow_call.inputs.astroid_sha != ''
+        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/${{ context.repo.owner }}/astroid@${{
-            on.workflow_call.inputs.astroid_sha }}
+            inputs.astroid_sha }}
       - name: Run pytest
         run: |
           . venv/bin/activate
@@ -309,7 +309,7 @@ jobs:
         id: generate-python-key
         run: >-
           echo "key=venv-${{ env.CACHE_VERSION }}-${{
-            on.workflow_call.inputs.astroid_sha }}-${{
+            inputs.astroid_sha }}-${{
             hashFiles('pyproject.toml', 'requirements_test_min.txt')
           }}" >> $GITHUB_OUTPUT
       - name: Restore Python virtual environment
@@ -328,11 +328,11 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && on.workflow_call.inputs.astroid_sha != ''
+        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/${{ context.repo.owner }}/astroid@${{
-            on.workflow_call.inputs.astroid_sha }}
+            inputs.astroid_sha }}
       - name: Run pytest
         run: |
           . venv/bin/activate
