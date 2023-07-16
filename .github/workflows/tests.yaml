@@ -47,6 +47,7 @@ jobs:
         uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ matrix.python-version }}
+          repository: pylint-dev/pylint
           check-latest: true
       - name: Generate partial Python venv restore key
         id: generate-python-key
@@ -200,6 +201,7 @@ jobs:
         uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ matrix.python-version }}
+          repository: pylint-dev/pylint
           check-latest: true
       - name: Generate partial Python venv restore key
         id: generate-python-key
@@ -253,6 +255,7 @@ jobs:
         uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ matrix.python-version }}
+          repository: pylint-dev/pylint
           check-latest: true
       - name: Generate partial Python venv restore key
         id: generate-python-key
@@ -304,6 +307,7 @@ jobs:
         uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ matrix.python-version }}
+          repository: pylint-dev/pylint
           check-latest: true
       - name: Generate partial Python venv restore key
         id: generate-python-key
