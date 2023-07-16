@@ -75,7 +75,7 @@ jobs:
         if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
-          pip install https://github.com/${{ context.repo.owner }}/astroid@${{
+          pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -227,7 +227,7 @@ jobs:
         if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
-          pip install https://github.com/${{ context.repo.owner }}/astroid@${{
+          pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -280,7 +280,7 @@ jobs:
         if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
-          pip install https://github.com/${{ context.repo.owner }}/astroid@${{
+          pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -331,7 +331,7 @@ jobs:
         if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
-          pip install https://github.com/${{ context.repo.owner }}/astroid@${{
+          pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
