@@ -74,7 +74,7 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
+        if: inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/pylint-dev/astroid@${{
@@ -234,7 +234,7 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
+        if: inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/pylint-dev/astroid@${{
@@ -289,7 +289,7 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
+        if: inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/pylint-dev/astroid@${{
@@ -342,7 +342,7 @@ jobs:
           python -m pip install -U pip setuptools wheel
           pip install -U -r requirements_test_min.txt
       - name: Install requested astroid SHA
-        if: steps.cache-venv.outputs.cache-hit != 'true' && inputs.astroid_sha != ''
+        if: inputs.astroid_sha != ''
         run: >-
           . venv/bin/activate
           pip install https://github.com/pylint-dev/astroid@${{
