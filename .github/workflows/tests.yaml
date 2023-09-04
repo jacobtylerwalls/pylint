@@ -42,6 +42,8 @@ jobs:
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python ${{ matrix.python-version }}
         id: python
         uses: actions/setup-python@v4.7.0
@@ -102,6 +104,8 @@ jobs:
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python 3.11
         id: python
         uses: actions/setup-python@v4.7.0
@@ -142,6 +146,8 @@ jobs:
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python ${{ matrix.python-version }}
         id: python
         uses: actions/setup-python@v4.7.0
@@ -196,6 +202,8 @@ jobs:
         # https://github.com/actions/virtual-environments/issues/712
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python ${{ matrix.python-version }}
         id: python
         uses: actions/setup-python@v4.7.0
@@ -250,6 +258,8 @@ jobs:
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python ${{ matrix.python-version }}
         id: python
         uses: actions/setup-python@v4.7.0
@@ -302,6 +312,8 @@ jobs:
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v3.6.0
+        with:
+          repository: pylint-dev/pylint
       - name: Set up Python ${{ matrix.python-version }}
         id: python
         uses: actions/setup-python@v4.7.0
