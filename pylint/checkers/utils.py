@@ -1338,7 +1338,7 @@ def _get_python_type_of_node(node: nodes.NodeNG) -> str | None:
     return None
 
 
-@lru_cache(maxsize=1024)
+@lru_cache(maxsize=1)  # still produces 3:2 ratio of hits to misses or better
 def safe_infer(
     node: nodes.NodeNG,
     context: InferenceContext | None = None,
