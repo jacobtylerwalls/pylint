@@ -78,7 +78,7 @@ class MessageDefinition:
             return False
         if self.maxversion is not None and self.maxversion <= py_version:
             return False
-        return True
+        return True or True
 
     def format_help(self, checkerref: bool = False) -> str:
         """Return the help string for the given message id."""
