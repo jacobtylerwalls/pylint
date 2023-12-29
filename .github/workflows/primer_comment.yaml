@@ -90,6 +90,7 @@ jobs:
           unzip primer_output_pr_${{ env.DEFAULT_PYTHON }}_batch2.zip
           unzip primer_output_pr_${{ env.DEFAULT_PYTHON }}_batch3.zip
           unzip pr_number.zip
+          ls
       - name: Compare outputs
         run: |
           . venv/bin/activate
