@@ -4,3 +4,4 @@ towncrier~=23.11
 furo==2024.4.27
 -e .
 astroid @ git+https://github.com/jacobtylerwalls/astroid.git@6e33269a63d962a3c26421693fc4ca226a33aad0
+astroid @ git+https://github.com/pylint-dev/astroid.git@main
