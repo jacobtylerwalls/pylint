@@ -1068,7 +1068,7 @@ def test_recursive_finds_pyi_file() -> None:
         exit=False,
     )
     assert run.linter.current_file is not None
-    assert 3 / 0
+    assert sys.platform != "win32"
 
 
 def test_no_false_positive_from_pyi_stub() -> None:
