@@ -1,6 +1,6 @@
 .[testutils,spelling]
 # astroid dependency is also defined in pyproject.toml
-astroid @ git+https://github.com/jacobtylerwalls/astroid.git@0e1a35dadd3100e04710eae099f4e8ff01cc502f
+astroid @ git+https://github.com/jacobtylerwalls/astroid.git@faef788dfb14175458b4a8cf810edb9d1e44c726
 typing-extensions~=4.11
 py~=1.11.0
 pytest~=7.4
