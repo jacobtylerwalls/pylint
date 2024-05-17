@@ -171,7 +171,6 @@ jobs:
     name: run / ${{ matrix.python-version }} / Windows
     runs-on: windows-latest
     timeout-minutes: 25
-    needs: tests-linux
     strategy:
       fail-fast: false
       matrix:
