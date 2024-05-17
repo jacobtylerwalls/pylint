@@ -1068,7 +1068,7 @@ def test_recursive_finds_pyi_file() -> None:
         exit=False,
     )
     assert run.linter.current_file is not None
-    assert run.linter.current_file.endswith("foo.pyi")
+    assert 3 / 0
 
 
 def test_no_false_positive_from_pyi_stub() -> None:
