@@ -13,7 +13,7 @@ on:
       - "maintenance/**"
   workflow_call:
     inputs:
-      astroid-sha:
+      astroid_sha:
         required: false
         type: string
 
@@ -76,8 +76,7 @@ jobs:
       - name: Install requested astroid SHA
         if: inputs.astroid_sha != ''
         run: >-
-          . venv/bin/activate
-          pip install https://github.com/pylint-dev/astroid@${{
+          . venv/bin/activate pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -236,8 +235,7 @@ jobs:
       - name: Install requested astroid SHA
         if: inputs.astroid_sha != ''
         run: >-
-          . venv/bin/activate
-          pip install https://github.com/pylint-dev/astroid@${{
+          . venv/bin/activate pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -291,8 +289,7 @@ jobs:
       - name: Install requested astroid SHA
         if: inputs.astroid_sha != ''
         run: >-
-          . venv/bin/activate
-          pip install https://github.com/pylint-dev/astroid@${{
+          . venv/bin/activate pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
@@ -344,8 +341,7 @@ jobs:
       - name: Install requested astroid SHA
         if: inputs.astroid_sha != ''
         run: >-
-          . venv/bin/activate
-          pip install https://github.com/pylint-dev/astroid@${{
+          . venv/bin/activate pip install https://github.com/pylint-dev/astroid@${{
             inputs.astroid_sha }}
       - name: Run pytest
         run: |
